@@ -69,6 +69,6 @@ class DesignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def design_params
-      params.require(:design).permit(:image, :comment, :user_id)
+      params.require(:design).permit(:image, :comment).merge(user_id: current_user.id)
     end
 end
