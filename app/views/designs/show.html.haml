@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Image:
+  = @design.image
+%p
+  %strong Comment:
+  = @design.comment
+%p
+  %strong User:
+  = @design.user_id
+= link_to 'Edit', edit_design_path(@design)
+|
+= link_to 'Back', designs_path

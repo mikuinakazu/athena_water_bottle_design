@@ -1,0 +1,20 @@
+= form_with(model: design, local: true) do |form|
+  - if design.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(design.errors.count, "error")
+        prohibited this design from being saved:
+      %ul
+        - design.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :image
+    = form.text_field :image, id: :design_image
+  .field
+    = form.label :comment
+    = form.text_area :comment, id: :design_comment
+  .field
+    = form.label :user_id
+    = form.number_field :user_id, id: :design_user_id
+  .actions
+    = form.submit
