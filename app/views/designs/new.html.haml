@@ -1,0 +1,8 @@
+%h1 デザインを登録する
+= form_for @design do |f|
+  %h2 画像
+  %p 投稿する画像は◯バイト以下としてください。
+  = f.file_field :image, require:true, label: '画像URL'
+  %h2 コメント
+  = f.text_field :comment, require:true
+  = f.submit 'デザインを登録する'

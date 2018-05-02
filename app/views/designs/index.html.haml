@@ -1,0 +1,5 @@
+%h1 デザイン一覧
+- @designs.each do |design|
+  = design.image
+  = design.comment
+=link_to 'デザインを登録する', new_design_path
