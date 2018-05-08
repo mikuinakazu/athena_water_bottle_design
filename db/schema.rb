@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20180508095320) do
   create_table "designs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "comment"
     t.integer "user_id"
+    t.integer "likes_count"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
