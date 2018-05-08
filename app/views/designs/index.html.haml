@@ -1,5 +1,5 @@
 %h1 デザイン一覧
 - @designs.each do |design|
-  = design.image
+  .image{style: "background-image: url(#{design.image.url(:medium)}); width: 300px; height: 300px;"}
   = design.comment
-=link_to 'デザインを登録する', new_design_path
+=link_to 'デザインを登録する', new_design_path, class: "register-btn"

@@ -10,7 +10,6 @@ class DesignsController < ApplicationController
 
   def create
     design = Design.create(design_params)
-    # binding.pry
   end
 
   def show
