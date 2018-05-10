@@ -1,0 +1,4 @@
+%h1 このデザインを削除してよろしいですか？
+.image{style: "background-image: url(#{@design.image.url(:medium)}); width: 300px; height: 200px;"}
+= @design.comment
+=link_to '削除する', design_path(@design.id), method: :delete

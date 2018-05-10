@@ -4,3 +4,5 @@
   = design.comment
   %span{id: "like-of-#{design.id}"}
     = render partial: 'likes/like', locals: { design: design, like: @like }
+  - if design.user_id == current_user.id
+    = link_to 'このデザインを削除する', design_path(design.id)

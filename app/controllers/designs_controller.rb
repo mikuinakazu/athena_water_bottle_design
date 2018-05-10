@@ -18,6 +18,7 @@ class DesignsController < ApplicationController
   end
 
   def show
+    @design = Design.find(params[:id])
   end
 
   def edit
@@ -27,6 +28,9 @@ class DesignsController < ApplicationController
   end
 
   def destroy
+    design = Design.find(params[:id])
+    design.destroy
+    redirect_to :root, notice: 'デザインを削除しました。'
   end
 
   private
