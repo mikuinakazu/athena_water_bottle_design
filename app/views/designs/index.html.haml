@@ -2,4 +2,5 @@
 - @designs.each do |design|
   .image{style: "background-image: url(#{design.image.url(:medium)}); width: 300px; height: 300px;"}
   = design.comment
-=link_to 'デザインを登録する', new_design_path, class: "register-btn"
+  %span{id: "like-of-#{design.id}"}
+    = render partial: 'likes/like', locals: { design: design, like: @like }

@@ -1,7 +1,12 @@
 class DesignsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @designs = Design.all
+    @like = Like.find_by(user_id: current_user.id)
+    @likes = Like.where(design_id: params[:design_id])
+    # binding.pry
   end
 
   def new
