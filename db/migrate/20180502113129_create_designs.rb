@@ -1,10 +1,9 @@
 class CreateDesigns < ActiveRecord::Migration[5.1]
   def change
     create_table :designs do |t|
-      t.text     :comment
-      t.integer  :user_id
-      t.integer  :likes_count
+      t.text        :comment
+      t.references  :user, foreign_key: true
+      t.integer     :likes_count
     end
-    add_foreign_key :designs, :users
   end
 end
