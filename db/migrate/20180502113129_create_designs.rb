@@ -5,5 +5,6 @@ class CreateDesigns < ActiveRecord::Migration[5.1]
       t.integer  :user_id
       t.integer  :likes_count
     end
+    add_foreign_key :designs, :users
   end
 end
